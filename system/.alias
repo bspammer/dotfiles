@@ -1,0 +1,35 @@
+# Shortcuts
+alias v="vim"
+alias rr="rm -rf"
+alias f="find . -iname"
+alias l="ls -lAh"
+alias ld="ls -ld"
+
+# Default values
+alias grep="grep -i --color=auto"
+
+# Directory traversal
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias -- -="cd - 1>/dev/null"
+
+# Request using GET, POST, etc. method
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+  alias "$method"="lwp-request -m '$method'"
+done
+
+# Transmission aliases
+alias t-start='sudo service transmission-daemon start'
+alias t-stop='sudo service transmission-daemon stop'
+alias t-reload='sudo service transmission-daemon reload'
+alias t-list='transmission-remote -n 'transmission:transmission' -l'
+alias t-basicstats='transmission-remote -n 'transmission:transmission' -st'
+alias t-fullstats='transmission-remote -n 'transmission:transmission' -si'
+alias t-startall='transmission-remote -n 'transmission:transmission' -t all -s'
+alias t-stopall='transmission-remote -n 'transmission:transmission' -t all -S'
+alias t-removeall='transmission-remote -n 'transmission:transmission' -t all -r'
+
+# Misc
+alias quit="exit"
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
