@@ -23,6 +23,7 @@ set backspace=indent,eol,start
 set laststatus=2
 set relativenumber
 set undofile
+set colorcolumn=80
 
 nnoremap / /\v
 vnoremap / /\v
