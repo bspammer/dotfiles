@@ -65,3 +65,4 @@ nmap <leader>e <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader>r :so $MYVIMRC<cr>
 nnoremap <leader>q :wq<cr>:so $MYVIMRC<cr>
 inoremap jj <ESC>
+inoremap <C-\> <C-o>:left 0<Cr><BS>
