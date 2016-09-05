@@ -20,8 +20,8 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set relativenumber
 set number
+set relativenumber
 set undofile
 set colorcolumn=80
 
@@ -38,6 +38,9 @@ set formatoptions=qrn1
 
 set list
 set listchars=tab:▸\ ,eol:¬
+
+" Enable syntax highlighting
+syntax enable
 
 nnoremap j gj
 nnoremap k gk
