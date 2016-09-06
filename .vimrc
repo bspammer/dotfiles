@@ -45,6 +45,7 @@ syntax enable
 nnoremap j gj
 nnoremap k gk
 nnoremap ; :
+nnoremap : ;
 
 nnoremap / /\v
 vnoremap / /\v
