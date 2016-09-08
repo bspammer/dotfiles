@@ -1,4 +1,6 @@
 set nocompatible
+filetype off
+
 
 set modelines=0
 
@@ -70,3 +72,17 @@ nnoremap <leader>q :wq<cr>:so $MYVIMRC<cr>
 inoremap jj <ESC>
 inoremap JJ <ESC>
 inoremap <C-\> <C-o>:left 0<Cr><BS>
+
+
+
+" VUNDLE SETUP
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+" Plugins to install go here
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+"
+call vundle#end()
+filetype plugin indent on
