@@ -66,9 +66,9 @@ nnoremap <leader>w <C-w>v<C-w>l
 
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>v V`]
-nmap <leader>e <C-w><C-v><C-l>:e $MYVIMRC<cr>
-nnoremap <leader>r :so $MYVIMRC<cr>
-nnoremap <leader>q :wq<cr>:so $MYVIMRC<cr>
+nnoremap <leader>e <C-w><C-v><C-w>l:e $HOME/.vimrc<cr>
+nnoremap <leader>r :so $HOME/.vimrc<cr>
+nnoremap <leader>q :q<cr>:so $HOME/.vimrc<cr>
 inoremap jj <ESC>
 inoremap JJ <ESC>
 inoremap <C-\> <C-o>:left 0<Cr><BS>
