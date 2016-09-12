@@ -25,6 +25,8 @@ set laststatus=2
 set number
 set relativenumber
 set undofile
+set undodir=$HOME/.vim/undofiles
+set undolevels=5000
 set colorcolumn=80
 
 set ignorecase
