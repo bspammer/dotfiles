@@ -84,6 +84,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-characterize'
+Plugin 'ctrlpvim/ctrlp.vim'
 "
 call vundle#end()
 filetype plugin indent on
