@@ -91,6 +91,13 @@ Plugin 'bspammer/InsertChar'
 " Mappings for InsertChar, <NUL> == Control-Space
 nnoremap <SPACE> :<C-U>call InsertChar#insert(v:count1)<CR>
 nnoremap <NUL> :<C-U>call InsertChar#insertAfter(v:count1)<CR>
+Plugin 'mbbill/undotree'
+" Settings for undotree
+nnoremap <F5> :UndotreeToggle<CR>
+let g:undotree_SplitWidth=35
+let g:undotree_SetFocusWhenToggle=1
+let g:undotree_WindowLayout=2
+let g:undotree_HighlightChangedText = 0
 "
 call vundle#end()
 filetype plugin indent on
