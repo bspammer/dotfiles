@@ -3,7 +3,7 @@ alias v="vim"
 alias rr="rm -rf"
 alias f="find . -iname"
 alias l="ls -lAh"
-alias la="l"
+alias la="ls -Ah"
 alias ld="ls -ld"
 
 # Default values
