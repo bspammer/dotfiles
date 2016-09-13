@@ -87,10 +87,14 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-characterize'
 Plugin 'ctrlpvim/ctrlp.vim'
+" Mappings for ctrlp
+let g:ctrlp_show_hidden = 1
+
 Plugin 'bspammer/InsertChar'
 " Mappings for InsertChar, <NUL> == Control-Space
 nnoremap <NUL> :<C-U>call InsertChar#insert(v:count1)<CR>
 nnoremap <SPACE> :<C-U>call InsertChar#insertAfter(v:count1)<CR>
+
 Plugin 'mbbill/undotree'
 " Settings for undotree
 nnoremap <F5> :UndotreeToggle<CR>
