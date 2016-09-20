@@ -102,6 +102,7 @@ let g:undotree_SplitWidth=35
 let g:undotree_SetFocusWhenToggle=1
 let g:undotree_WindowLayout=1
 let g:undotree_HighlightChangedText = 0
+Plugin 'wellle/targets.vim'
 "
 call vundle#end()
 filetype plugin indent on
