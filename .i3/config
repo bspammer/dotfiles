@@ -205,20 +205,19 @@ bar {
 #        status_command i3status -c ~/.i3/i3status.conf
         status_command i3blocks -c ~/.i3/i3blocks.conf
         tray_output primary
-	strip_workspace_numbers yes
-#	mode hide
-#	hidden_state hide
-#	modifier $mod
-	colors {
-		background $bg-color
-		separator #757575
-		statusline $text-color
-		#			border			background		text
-		focused_workspace	$bg-color		$bg-color		$text-color
-		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$inactive-text-color
-		urgent_workspace	$urgent-bg-color	$urgent-bg-color	$text-color
-		
-	}
+    strip_workspace_numbers yes
+#   mode hide
+#   hidden_state hide
+#   modifier $mod
+    colors {
+        background $bg-color
+        separator #757575
+        statusline $text-color
+                            #border             background          text
+        focused_workspace   $bg-color           $bg-color           $text-color
+        inactive_workspace  $inactive-bg-color  $inactive-bg-color  $inactive-text-color
+        urgent_workspace    $urgent-bg-color    $urgent-bg-color    $text-color
+    }
 }
 
 
