@@ -41,7 +41,7 @@ set textwidth=79
 set formatoptions=qrn1
 
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:»·,eol:¬,trail:·
 
 " Enable syntax highlighting
 syntax enable
