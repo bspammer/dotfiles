@@ -39,3 +39,4 @@ alias t-removeall='transmission-remote -n 'transmission:transmission' -t all -r'
 alias quit="exit"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias uni="ssh cc1311@csteach1.york.ac.uk"
+alias dots="source '$HOME'/.dotfiles/update_dotfiles.sh"
