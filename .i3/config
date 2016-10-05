@@ -221,15 +221,22 @@ bar {
     }
 }
 
-
-exec_always feh --bg-max /home/charlie/.local/share/satellite/background.png
 # Run avinash's script every 30 mins to update the desktop
-exec --no-startup-id /home/charlie/Scripts/satellite -depth 4 -every 1800s
-exec --no-startup-id compton -f
-exec --no-startup-id spotify
-exec --no-startup-id firefox
+# exec_always feh --bg-max /home/charlie/.local/share/satellite/background.png
+# exec --no-startup-id /home/charlie/Scripts/satellite -depth 4 -every 1800s
 
-assign [class="Firefox"] $workspace1
-assign [class="Steam"] $workspace3
+assign [class="google-chrome"] $workspace1
+assign [class="Thunar"] $workspace3
 for_window [class="Spotify"] move to workspace $workspace10
 for_window [class="Steam"] floating enable
+
+exec_always feh --bg-fill /home/charlie/Pictures/background.jpg
+exec --no-startup-id compton -f --config ~/.compton.conf
+exec google-chrome
+exec thunar
+
+
+#i3-gaps config
+for_window [class="^.*"] border pixel 2
+gaps inner 40
+smart_gaps on
