@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $HOME/.dotfiles
+cd "$HOME/.dotfiles"
 if [ -d .git ]; then
     git pull
 else
