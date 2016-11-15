@@ -70,6 +70,7 @@ nnoremap <leader>v V`]
 nnoremap <leader>e <C-w><C-v><C-w>l:e $HOME/.vimrc<cr>
 nnoremap <leader>r :so $HOME/.vimrc<cr>
 nnoremap <leader>q :q<cr>:so $HOME/.vimrc<cr>
+nnoremap <leader>p :set paste!<cr>
 inoremap jj <ESC>
 inoremap JJ <ESC>
 inoremap <C-\> <C-o>:left 0<Cr><BS>
