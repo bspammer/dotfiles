@@ -49,6 +49,8 @@ nnoremap j gj
 nnoremap k gk
 nnoremap ; :
 nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 
 nnoremap / /\v
 vnoremap / /\v
