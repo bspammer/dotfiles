@@ -8,6 +8,7 @@ ln -s "$HOME/.dotfiles/.compton.conf"  "$HOME"
 ln -s "$HOME/.dotfiles/.fonts"         "$HOME"
 ln -s "$HOME/.dotfiles/.vimrc"         "$HOME"
 ln -s "$HOME/.dotfiles/.i3"            "$HOME"
+ln -s "$HOME/.dotfiles/.tmux.conf"     "$HOME"
 
 
 mkdir -p "$HOME"/.vim/bundle
