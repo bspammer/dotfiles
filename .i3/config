@@ -230,7 +230,7 @@ assign [class="Thunar"] $workspace3
 for_window [class="Spotify"] move to workspace $workspace10
 for_window [class="Steam"] floating enable
 
-exec_always feh --bg-fill /home/charlie/Pictures/background.jpg
+exec_always feh --bg-fill /home/charlie/pictures/background.jpg
 exec --no-startup-id compton -f --config ~/.compton.conf
 exec google-chrome
 exec thunar
