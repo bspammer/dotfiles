@@ -239,4 +239,3 @@ exec thunar
 #i3-gaps config
 for_window [class="^.*"] border pixel 2
 gaps inner 40
-smart_gaps on
