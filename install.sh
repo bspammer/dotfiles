@@ -9,6 +9,7 @@ ln -s "$HOME/.dotfiles/.fonts"         "$HOME"
 ln -s "$HOME/.dotfiles/.vimrc"         "$HOME"
 ln -s "$HOME/.dotfiles/.i3"            "$HOME"
 ln -s "$HOME/.dotfiles/.tmux.conf"     "$HOME"
+ln -s "$HOME/.dotfiles/.ssh/config"    "$HOME/.ssh"
 
 
 mkdir -p "$HOME"/.vim/bundle
