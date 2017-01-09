@@ -124,13 +124,13 @@ bindsym $mod+minus scratchpad show
 # workspace names
 set $workspace1  "1"
 set $workspace2  "2"
-set $workspace3  "3"
-set $workspace4  "4I"
-set $workspace5  "5II"
-set $workspace6  "6III"
-set $workspace7  "7IV"
-set $workspace8  "8V"
-set $workspace9  "9VI"
+set $workspace3  "3"
+set $workspace4  "4"
+set $workspace5  "5I"
+set $workspace6  "6II"
+set $workspace7  "7III"
+set $workspace8  "8IV"
+set $workspace9  "9V"
 set $workspace10 "10"
 
 
@@ -227,7 +227,7 @@ bar {
 # exec --no-startup-id /home/charlie/Scripts/satellite -depth 4 -every 1800s
 
 assign [class="google-chrome"] $workspace1
-assign [class="Thunar"] $workspace3
+assign [class="Thunar"] $workspace4
 for_window [class="Spotify"] move to workspace $workspace10
 for_window [class="Steam"] floating enable
 
