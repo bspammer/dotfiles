@@ -91,6 +91,12 @@ Plugin 'tpope/vim-characterize'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Mappings for ctrlp
 let g:ctrlp_show_hidden = 1
+" Setup some default ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|bin|lib|local|share)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|pyc|swp)$',
+\}
+
 
 Plugin 'bspammer/InsertChar'
 " Mappings for InsertChar, <NUL> == Control-Space
