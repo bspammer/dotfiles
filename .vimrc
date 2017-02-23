@@ -54,8 +54,9 @@ vnoremap : ;
 
 nnoremap / /\v
 vnoremap / /\v
-nnoremap <tab> %
-vnoremap <tab> %
+
+vnoremap J j
+vnoremap K k
 
 au FocusLost * :wa
 
@@ -66,17 +67,16 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <leader>w <C-w>v<C-w>l
-
 nnoremap <silent> <leader>p :set paste!<cr>
 nnoremap <silent> <leader><space> :set hlsearch!<cr>
 nnoremap <leader>v V`]
 nnoremap <leader>e <C-w><C-v><C-w>l:e $HOME/.vimrc<cr>
 nnoremap <leader>r :so $HOME/.vimrc<cr>
 nnoremap <leader>q :q<cr>:so $HOME/.vimrc<cr>
+
 inoremap jj <ESC>
 inoremap JJ <ESC>
 inoremap <C-\> <C-o>:left 0<Cr><BS>
-
 
 
 " VUNDLE SETUP
