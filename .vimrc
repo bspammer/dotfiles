@@ -113,6 +113,7 @@ let g:undotree_HighlightChangedText = 0
 Plugin 'wellle/targets.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-dispatch'
+Plugin 'scrooloose/nerdcommenter'
 "
 call vundle#end()
 filetype plugin indent on
