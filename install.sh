@@ -14,6 +14,7 @@ ln -s "$HOME/.dotfiles/.ssh/config"    "$HOME/.ssh"
 
 mkdir -p "$HOME"/.vim/bundle
 mkdir -p "$HOME"/.vim/undofiles
+mkdir -p "$HOME"/.vim/swapfiles
 cd "$HOME/.vim/bundle"
 if [ ! -d Vundle.vim ]
 then

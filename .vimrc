@@ -26,6 +26,7 @@ set number
 set relativenumber
 set undofile
 set undodir=$HOME/.vim/undofiles
+set directory=$HOME/.vim/swapfiles,~/tmp,/var/tmp,/tmp
 set undolevels=5000
 
 set ignorecase
