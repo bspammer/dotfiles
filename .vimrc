@@ -89,6 +89,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-characterize'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-dispatch'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Mappings for ctrlp
 let g:ctrlp_show_hidden = 1
@@ -112,8 +114,6 @@ let g:undotree_SetFocusWhenToggle=1
 let g:undotree_WindowLayout=1
 let g:undotree_HighlightChangedText = 0
 Plugin 'wellle/targets.vim'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/nerdcommenter'
 "
 call vundle#end()
