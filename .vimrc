@@ -57,6 +57,7 @@ vnoremap / /\v
 
 vnoremap J j
 vnoremap K k
+vnoremap . :normal.<CR>
 
 au FocusLost * :wa
 
