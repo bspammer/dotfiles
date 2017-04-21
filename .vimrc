@@ -1,9 +1,8 @@
 set nocompatible
 filetype off
-
+set spelllang=en_gb
 
 set modelines=0
-
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -74,6 +73,8 @@ nnoremap <leader>v V`]
 nnoremap <leader>e <C-w><C-v><C-w>l:e $HOME/.vimrc<cr>
 nnoremap <leader>r :so $HOME/.vimrc<cr>
 nnoremap <leader>q :q<cr>:so $HOME/.vimrc<cr>
+nnoremap <leader>f 1z=
+nnoremap <leader>s :set spell!<cr>
 
 inoremap jj <ESC>
 inoremap JJ <ESC>
