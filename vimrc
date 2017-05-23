@@ -71,9 +71,9 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <silent> <leader>p :set paste!<cr>
 nnoremap <silent> <leader><space> :set hlsearch!<cr>
 nnoremap <leader>v V`]
-nnoremap <leader>e <C-w><C-v><C-w>l:e $HOME/.vim/.vimrc<cr>
-nnoremap <leader>r :so $HOME/.vim/.vimrc<cr>
-nnoremap <leader>q :q<cr>:so $HOME/.vim/.vimrc<cr>
+nnoremap <leader>e <C-w><C-v><C-w>l:e $HOME/.vim/vimrc<cr>
+nnoremap <leader>r :so $HOME/.vim/vimrc<cr>
+nnoremap <leader>q :q<cr>:so $HOME/.vim/vimrc<cr>
 nnoremap <leader>f 1z=
 nnoremap <leader>s :set spell!<cr>
 
