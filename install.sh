@@ -39,6 +39,7 @@ trysymlink "$DOTFILES_DIR/tmux.conf"    "$HOME/.tmux.conf"
 trysymlink "$DOTFILES_DIR/sshconfig"    "$HOME/.ssh/config"
 trysymlink "$DOTFILES_DIR/compton.conf" "$HOME/.compton.conf"
 trysymlink "$DOTFILES_DIR/i3/"          "$HOME/.config/i3"
+trysymlink "$DOTFILES_DIR/cava/"        "$HOME/.config/cava"
 trysymlink "$DOTFILES_DIR/fonts/"       "$HOME/.fonts"
 
 unset DOTFILES_DIR
