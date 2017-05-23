@@ -117,6 +117,9 @@ let g:undotree_WindowLayout=1
 let g:undotree_HighlightChangedText = 0
 Plugin 'wellle/targets.vim'
 Plugin 'scrooloose/nerdcommenter'
-"
+Plugin 'scrooloose/nerdtree'
+nnoremap <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = 'v'
 call vundle#end()
 filetype plugin indent on
