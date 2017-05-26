@@ -1,0 +1,9 @@
+VisualHostKey=yes
+
+Host uni
+    HostName csteach1.york.ac.uk
+    User cc1311
+Host vpn
+    HostName ec2-52-56-227-172.eu-west-2.compute.amazonaws.com
+    User ubuntu
+    IdentityFile ~/.ssh/me.pem

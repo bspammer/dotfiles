@@ -1,9 +1,8 @@
 set nocompatible
 filetype off
-
+set spelllang=en_gb
 
 set modelines=0
-
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -58,6 +57,7 @@ vnoremap / /\v
 
 vnoremap J j
 vnoremap K k
+vnoremap . :normal.<CR>
 
 au FocusLost * :wa
 
@@ -71,9 +71,11 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <silent> <leader>p :set paste!<cr>
 nnoremap <silent> <leader><space> :set hlsearch!<cr>
 nnoremap <leader>v V`]
-nnoremap <leader>e <C-w><C-v><C-w>l:e $HOME/.vimrc<cr>
-nnoremap <leader>r :so $HOME/.vimrc<cr>
-nnoremap <leader>q :q<cr>:so $HOME/.vimrc<cr>
+nnoremap <leader>e <C-w><C-v><C-w>l:e $HOME/.vim/vimrc<cr>
+nnoremap <leader>r :so $HOME/.vim/vimrc<cr>
+nnoremap <leader>q :q<cr>:so $HOME/.vim/vimrc<cr>
+nnoremap <leader>f 1z=
+nnoremap <leader>s :set spell!<cr>
 
 inoremap jj <ESC>
 inoremap JJ <ESC>
@@ -115,7 +117,10 @@ let g:undotree_WindowLayout=1
 let g:undotree_HighlightChangedText = 0
 Plugin 'wellle/targets.vim'
 Plugin 'scrooloose/nerdcommenter'
-"
+Plugin 'scrooloose/nerdtree'
+nnoremap <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '>'
+let g:NERDTreeDirArrowCollapsible = 'v'
 call vundle#end()
 filetype plugin indent on
 
