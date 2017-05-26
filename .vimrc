@@ -118,3 +118,6 @@ Plugin 'scrooloose/nerdcommenter'
 "
 call vundle#end()
 filetype plugin indent on
+
+"gofmt on save
+autocmd BufWritePost *.go silent! !gofmt -w %
