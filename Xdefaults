@@ -1,0 +1,6 @@
+*color15: #002B36
+*color14: #282828
+
+URxvt*scrollBar: false
+URxvt*background: 14
+URxvt*foreground: white
