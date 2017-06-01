@@ -81,6 +81,7 @@ inoremap jj <ESC>
 inoremap JJ <ESC>
 inoremap <C-\> <C-o>:left 0<Cr><BS>
 
+cnoremap w!! w !sudo tee > /dev/null %
 
 " VUNDLE SETUP
 set rtp+=~/.vim/bundle/Vundle.vim
