@@ -52,8 +52,8 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-nnoremap / /\v
-vnoremap / /\v
+nnoremap / :set hlsearch<CR>/\v
+vnoremap / :set hlsearch<CR>/\v
 
 vnoremap J j
 vnoremap K k
@@ -69,7 +69,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <silent> <leader>p :set paste!<cr>
-nnoremap <silent> <leader><space> :set hlsearch!<cr>
+nnoremap <silent> <leader><space> :let @/ = ""<cr>:set nohlsearch<cr>
 nnoremap <leader>v V`]
 nnoremap <leader>e <C-w><C-v><C-w>l:e $HOME/.vim/vimrc<cr>
 nnoremap <leader>r :so $HOME/.vim/vimrc<cr>
