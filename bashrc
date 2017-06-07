@@ -35,3 +35,8 @@ for DOTFILE in $HOME/.dotfiles/system/.{alias,exports,functions,inputrc}
 do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
+
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export VIMINIT=":source $XDG_CONFIG_HOME"/vim/vimrc

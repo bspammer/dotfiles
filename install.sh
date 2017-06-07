@@ -23,24 +23,21 @@ function trysymlink {
 }
 
 
-trycreatedir "$HOME/.vim"
-trycreatedir "$HOME/.vim/bundle"
-trycreatedir "$HOME/.vim/undofiles"
-trycreatedir "$HOME/.vim/swapfiles"
+trycreatedir "$XDG_CACHE_HOME"
+trycreatedir "$XDG_CACHE_HOME"/vim
+trycreatedir "$XDG_CACHE_HOME"/vim/undofiles
+trycreatedir "$XDG_CACHE_HOME"/vim/swapfiles
+trycreatedir "$XDG_CACHE_HOME"/vim/backup
+trycreatedir "$XDG_CONFIG_HOME"
 
-if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
-    echo "Cloning Vundle..."
-    git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim" 1>/dev/null 2>/dev/null || echoerr "Failed to clone Vundle"
-fi
-
-trysymlink "$DOTFILES_DIR/vimrc"        "$HOME/.vim/vimrc"
 trysymlink "$DOTFILES_DIR/bashrc"       "$HOME/.bashrc"
 trysymlink "$DOTFILES_DIR/tmux.conf"    "$HOME/.tmux.conf"
 trysymlink "$DOTFILES_DIR/sshconfig"    "$HOME/.ssh/config"
 trysymlink "$DOTFILES_DIR/compton.conf" "$HOME/.compton.conf"
 trysymlink "$DOTFILES_DIR/Xdefaults"    "$HOME/.Xdefaults"
-trysymlink "$DOTFILES_DIR/i3/"          "$HOME/.config/i3"
-trysymlink "$DOTFILES_DIR/cava/"        "$HOME/.config/cava"
 trysymlink "$DOTFILES_DIR/fonts/"       "$HOME/.fonts"
+trysymlink "$DOTFILES_DIR/i3/"          "$XDG_CONFIG_HOME/i3"
+trysymlink "$DOTFILES_DIR/vim/"         "$XDG_CONFIG_HOME/vim"
+trysymlink "$DOTFILES_DIR/cava/"        "$XDG_CONFIG_HOME/cava"
 
 unset DOTFILES_DIR

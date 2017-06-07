@@ -24,8 +24,9 @@ set laststatus=2
 set number
 set relativenumber
 set undofile
-set undodir=$HOME/.vim/undofiles
-set directory=$HOME/.vim/swapfiles,~/tmp,/var/tmp,/tmp
+set undodir=$XDG_CACHE_HOME/vim/undofiles
+set directory=$XDG_CACHE_HOME/vim/swapfiles,~/tmp,/var/tmp,/tmp
+set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIMRUNTIME
 set undolevels=5000
 
 set ignorecase
@@ -71,9 +72,9 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <silent> <leader>p :set paste!<cr>
 nnoremap <silent> <leader><space> :let @/ = ""<cr>:set nohlsearch<cr>
 nnoremap <leader>v V`]
-nnoremap <leader>e <C-w><C-v><C-w>l:e $HOME/.vim/vimrc<cr>
-nnoremap <leader>r :so $HOME/.vim/vimrc<cr>
-nnoremap <leader>q :q<cr>:so $HOME/.vim/vimrc<cr>
+nnoremap <leader>e <C-w><C-v><C-w>l:e $XDG_CONFIG_HOME/vim/vimrc<cr>
+nnoremap <leader>r :so $XDG_CONFIG_HOME/vim/vimrc<cr>
+nnoremap <leader>q :q<cr>:so $XDG_CONFIG_HOME/vim/vimrc<cr>
 nnoremap <leader>f 1z=
 nnoremap <leader>s :set spell!<cr>
 
@@ -84,8 +85,8 @@ inoremap <C-\> <C-o>:left 0<Cr><BS>
 cnoremap w!! w !sudo tee > /dev/null %
 
 " VUNDLE SETUP
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=$XDG_CONFIG_HOME/vim/bundle/Vundle.vim
+call vundle#begin(expand('$XDG_CONFIG_HOME').'/vim/bundle')
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins to install go here
@@ -99,7 +100,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_show_hidden = 1
 " Setup some default ignores
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|bin|lib|local|share)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|bin|lib|local|share|forums)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|pyc|swp)$',
 \}
 
