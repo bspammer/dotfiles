@@ -29,9 +29,9 @@ esac
 
 # Set LSCOLORS
 
-eval "$(dircolors $HOME/.dotfiles/system/.dir_colors)"
+eval "$(dircolors $HOME/.dotfiles/system/dir_colors)"
 
-for DOTFILE in $HOME/.dotfiles/system/.{alias,exports,functions,inputrc}
+for DOTFILE in $HOME/.dotfiles/system/{aliases,exports,functions,inputrc}
 do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
