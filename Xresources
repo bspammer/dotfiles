@@ -1,0 +1,4 @@
+urxvt*background: #000000
+urxvt*foreground: #ffffff
+urxvt*font:xft:Adobe Courier:pixelsize=22
+urxvt*scrollBar: false
