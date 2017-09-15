@@ -3,38 +3,34 @@
 # for examples
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+[[ $- != *i* ]] && return
 
 # Set LSCOLORS
-
 eval "$(dircolors $HOME/.dotfiles/system/dir_colors)"
 
 for DOTFILE in $HOME/.dotfiles/system/{aliases,exports,functions,inputrc}
 do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
+
+# Check colors
+if [ $HOSTNAME = 'arch-vm' ]; then
+    export HOST_COLOR="\[\033[1;36m\]"
+fi
+if [ $HOSTNAME = 'drooble' ]; then
+    export HOST_COLOR="\[\033[1;34m\]"
+fi
+if [ $HOSTNAME = 'davinci' ]; then
+    export HOST_COLOR="\[\033[1;31m\]"
+fi
+
+
+# Color the colon red if root
+COLON_COLOR='0m'
+if [ ${UID} -eq 0 ]; then
+    COLON_COLOR='1;31m'
+fi
+PS1=`echo -ne "$HOST_COLOR\h\[\033[00m\]\[\e[$COLON_COLOR\]:\[\033[01;32m\]\w\[\033[00m\]\\[\033[01;33m\]\$\[\033[00m\] "`
 
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
