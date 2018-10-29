@@ -70,12 +70,14 @@ nnoremap <silent> <leader>w :vsplit<CR><C-w>l
 nnoremap <silent> <leader>W :split<CR><C-w>j
 nnoremap <silent> <leader>p :set paste!<CR>
 nnoremap <silent> <leader>e :vsplit<CR><C-w>l:e $XDG_CONFIG_HOME/vim/vimrc<CR>
+nnoremap <silent> <leader>E :e $XDG_CONFIG_HOME/vim/vimrc<CR>
 nnoremap <silent> <leader>r :so $XDG_CONFIG_HOME/vim/vimrc<CR>
 nnoremap <silent> <leader>q :q<CR>:so $XDG_CONFIG_HOME/vim/vimrc<CR>
 nnoremap <silent> <leader>s :set spell!<CR>
 nnoremap <silent> <leader><space> :let @/ = ""<CR>:set nohlsearch<CR>
 nnoremap <silent> <leader>v V`]
 nnoremap <silent> <leader>f 1z=
+nnoremap <silent> <leader>g :Goyo<CR>
 
 "Visual mode keymaps"
 vnoremap j gj
@@ -90,21 +92,51 @@ vnoremap . :normal.<CR>
 "Insert mode keymaps"
 inoremap jj <ESC>
 inoremap JJ <ESC>
+inoremap kk <ESC>
+inoremap KK <ESC>
+inoremap jk <ESC>
+inoremap kj <ESC>
+inoremap jK <ESC>
+inoremap Jk <ESC>
+inoremap kJ <ESC>
+inoremap Kj <ESC>
+inoremap JK <ESC>
+inoremap KJ <ESC>
 inoremap <C-\> <C-o>:left 0<Cr><BS>
 
 "Command mode keymaps"
 cnoremap w!! w !sudo tee > /dev/null %
 
 
-
 "============================================================"
 "|                         AUTOCMDS                         |"
 "============================================================"
 
+"Always trigger Limelight on entering Goyo mode
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
 "Always run gofmt on save"
 autocmd BufWritePost *.go silent! !gofmt -w %
 
-
+autocmd FileType tex inoremap ;tit \textit{}<ESC>T{i
+autocmd FileType tex inoremap ;bf \textbf{}<ESC>T{i
+autocmd FileType tex inoremap ;ct \cite{}<ESC>T{i
+autocmd FileType tex inoremap ;se \section{}<ESC>T{i
+autocmd FileType tex inoremap ;sse \subsection{}<ESC>T{i
+autocmd FileType tex inoremap ;ch \chapter{}<ESC>T{i
+autocmd FileType tex inoremap ;it \item
+autocmd FileType tex inoremap ;co \code{}<ESC>T{i
+autocmd FileType tex inoremap ;la \label{}<ESC>T{i
+autocmd FileType tex inoremap ;re \ref{}<ESC>T{i
+autocmd FileType tex inoremap ;eq \begin{equation} \label{}<CR>\end{equation}<ESC>O
+autocmd FileType tex inoremap ;ls \begin{lstlisting}[language={Java}, caption={}, label={}]<CR>\end{lstlisting}<ESC>O<TAB>
+autocmd FileType tex inoremap ;p \\<CR>\\<CR>
+autocmd FileType tex nnoremap <leader>m :Make<CR>
+autocmd FileType tex setlocal spell
+autocmd FileType tex setlocal nonumber
+autocmd FileType tex setlocal norelativenumber
+autocmd BufReadPost,BufNewFile *.tex Goyo
 
 "============================================================"
 "|                         PLUGINS                          |"
@@ -129,6 +161,11 @@ Plugin 'wellle/targets.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'alvan/vim-closetag'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'felixhummel/setcolors.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'junegunn/limelight.vim'
+Plugin 'junegunn/goyo.vim'
 call vundle#end()
 
 "Ctrl-P settings"
@@ -153,3 +190,10 @@ let g:undotree_HighlightChangedText = 0
 nnoremap <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = 'v'
+
+"Colorscheme settings"
+colorscheme molokai
+
+"Goyo settings
+let g:goyo_margin_top = 0
+let g:goyo_margin_bottom = 0
