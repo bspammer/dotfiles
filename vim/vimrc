@@ -91,17 +91,21 @@ vnoremap . :normal.<CR>
 
 "Insert mode keymaps"
 inoremap jj <ESC>
+inoremap jJ <ESC>
+inoremap Jj <ESC>
 inoremap JJ <ESC>
-inoremap kk <ESC>
-inoremap KK <ESC>
 inoremap jk <ESC>
-inoremap kj <ESC>
 inoremap jK <ESC>
 inoremap Jk <ESC>
+inoremap JK <ESC>
+inoremap kj <ESC>
 inoremap kJ <ESC>
 inoremap Kj <ESC>
-inoremap JK <ESC>
 inoremap KJ <ESC>
+inoremap kk <ESC>
+inoremap kK <ESC>
+inoremap Kk <ESC>
+inoremap KK <ESC>
 inoremap <C-\> <C-o>:left 0<Cr><BS>
 
 "Command mode keymaps"
