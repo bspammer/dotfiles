@@ -150,6 +150,11 @@ autocmd BufReadPost,BufNewFile *.tex Goyo
 set runtimepath+=$XDG_CONFIG_HOME/vim/bundle/Vundle.vim
 filetype plugin indent on
 
+"Install Vundle if it doesn't already exist"
+if empty(glob(expand('$XDG_CONFIG_HOME').'/vim/bundle/Vundle.vim'))
+    silent !git clone https://github.com/VundleVim/Vundle.vim.git $XDG_CONFIG_HOME/vim/bundle/Vundle.vim
+endif
+
 "Plugin list"
 call vundle#begin(expand('$XDG_CONFIG_HOME').'/vim/bundle')
 Plugin 'VundleVim/Vundle.vim'
