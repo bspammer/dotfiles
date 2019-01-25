@@ -84,8 +84,6 @@ vnoremap k gk
 vnoremap ; :
 vnoremap : ;
 vnoremap / :set hlsearch<CR>/
-vnoremap J gj
-vnoremap K gk
 vnoremap . :normal.<CR>
 
 "Insert mode keymaps"
