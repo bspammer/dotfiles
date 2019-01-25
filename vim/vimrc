@@ -77,7 +77,6 @@ nnoremap <silent> <leader>s :set spell!<CR>
 nnoremap <silent> <leader><space> :let @/ = ""<CR>:set nohlsearch<CR>
 nnoremap <silent> <leader>v V`]
 nnoremap <silent> <leader>f 1z=
-nnoremap <silent> <leader>g :Goyo<CR>
 
 "Visual mode keymaps"
 vnoremap j gj
@@ -203,5 +202,9 @@ let g:NERDTreeDirArrowCollapsible = 'v'
 colorscheme molokai
 
 "Goyo settings
+nnoremap <silent> <leader>g :Goyo<CR>
 let g:goyo_margin_top = 0
 let g:goyo_margin_bottom = 0
+
+"Limelight settings
+let g:limelight_conceal_ctermfg = 'gray'
