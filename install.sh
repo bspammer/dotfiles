@@ -41,5 +41,6 @@ trysymlink "$DOTFILES_DIR/fonts/"       "$HOME/.fonts"
 trysymlink "$DOTFILES_DIR/i3/"          "$XDG_CONFIG_HOME/i3"
 trysymlink "$DOTFILES_DIR/vim/"         "$XDG_CONFIG_HOME/vim"
 trysymlink "$DOTFILES_DIR/cava/"        "$XDG_CONFIG_HOME/cava"
+trysymlink "$DOTFILES_DIR/fish/"        "$XDG_CONFIG_HOME/fish"
 
 unset DOTFILES_DIR
