@@ -1,3 +1,3 @@
 function grep
-    /usr/local/bin/ggrep $argv
+    /usr/local/bin/ggrep -i $argv
 end
