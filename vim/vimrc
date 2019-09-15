@@ -77,7 +77,9 @@ nnoremap <silent> <leader>s :set spell!<CR>
 nnoremap <silent> <leader><space> :let @/ = ""<CR>:set nohlsearch<CR>
 nnoremap <silent> <leader>v V`]
 nnoremap <silent> <leader>f 1z=
-vnoremap <silent> <leader>y :w !pbcopy<CR>
+
+" requires vis plugin
+vnoremap <silent> <leader>y :B w !pbcopy<CR>
 
 "Visual mode keymaps"
 vnoremap j gj
@@ -173,6 +175,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'wellle/targets.vim'
+Plugin 'vim-scripts/vis'
 call vundle#end()
 
 "Ctrl-P settings"
