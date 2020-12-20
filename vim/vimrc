@@ -13,6 +13,7 @@ set modelines=0
 set scrolloff=3
 set autoindent
 set wrap
+set linebreak
 set list
 set listchars=tab:»·,eol:¬,trail:·
 set hidden
@@ -157,9 +158,11 @@ endif
 
 "Plugin list"
 call vundle#begin(expand('$XDG_CONFIG_HOME').'/vim/bundle')
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'alvan/vim-closetag'
 Plugin 'bspammer/InsertChar'
+Plugin 'bspammer/vim-redact-pass'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'felixhummel/setcolors.vim'
 Plugin 'flazz/vim-colorschemes'
