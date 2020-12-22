@@ -1,0 +1,18 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	email = charlie.collard@marshmallow.co
+	name = Charlie Collard
+[commit]
+	gpgsign = true
+[core]
+	excludesfile = ~/.gitignore
+[fetch]
+	prune = true
+[pull]
+	rebase = false
+[diff "gpgdecrypt"]
+    textconv = gpg --quiet --decrypt

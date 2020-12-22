@@ -32,15 +32,17 @@ trycreatedir "$XDG_CACHE_HOME"/vim/swapfiles
 trycreatedir "$XDG_CACHE_HOME"/vim/backup
 trycreatedir "$XDG_CONFIG_HOME"
 
-trysymlink "$DOTFILES_DIR/bashrc"       "$HOME/.bashrc"
-trysymlink "$DOTFILES_DIR/tmux.conf"    "$HOME/.tmux.conf"
-trysymlink "$DOTFILES_DIR/sshconfig"    "$HOME/.ssh/config"
-trysymlink "$DOTFILES_DIR/compton.conf" "$HOME/.compton.conf"
-trysymlink "$DOTFILES_DIR/Xresources"   "$HOME/.Xresources"
-trysymlink "$DOTFILES_DIR/fonts/"       "$HOME/.fonts"
-trysymlink "$DOTFILES_DIR/i3/"          "$XDG_CONFIG_HOME/i3"
-trysymlink "$DOTFILES_DIR/vim/"         "$XDG_CONFIG_HOME/vim"
-trysymlink "$DOTFILES_DIR/cava/"        "$XDG_CONFIG_HOME/cava"
-trysymlink "$DOTFILES_DIR/fish/"        "$XDG_CONFIG_HOME/fish"
+trysymlink "$DOTFILES_DIR/bashrc"           "$HOME/.bashrc"
+trysymlink "$DOTFILES_DIR/tmux.conf"        "$HOME/.tmux.conf"
+trysymlink "$DOTFILES_DIR/sshconfig"        "$HOME/.ssh/config"
+trysymlink "$DOTFILES_DIR/compton.conf"     "$HOME/.compton.conf"
+trysymlink "$DOTFILES_DIR/Xresources"       "$HOME/.Xresources"
+trysymlink "$DOTFILES_DIR/fonts/"           "$HOME/.fonts"
+trysymlink "$DOTFILES_DIR/i3/"              "$XDG_CONFIG_HOME/i3"
+trysymlink "$DOTFILES_DIR/vim/"             "$XDG_CONFIG_HOME/vim"
+trysymlink "$DOTFILES_DIR/cava/"            "$XDG_CONFIG_HOME/cava"
+trysymlink "$DOTFILES_DIR/fish/"            "$XDG_CONFIG_HOME/fish"
+trysymlink "$DOTFILES_DIR/globalgitconfig"  "$HOME/.gitconfig"
+trysymlink "$DOTFILES_DIR/globalgitignore"  "$HOME/.gitignore"
 
 unset DOTFILES_DIR
