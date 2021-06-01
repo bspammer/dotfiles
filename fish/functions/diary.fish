@@ -4,5 +4,8 @@ function diary --description "Opens my diary with a given day offset"
     else
         set offset 0
     end
-    vim (python3 -c "import datetime; import os; print((datetime.datetime.now() + datetime.timedelta(days=$offset)).strftime(os.environ['HOME'] + '/Dropbox/docs/diaries/%Y/%Y-%m-%d-%a.txt'))")
+    if test $offset -ge 0
+        set offset +$offset
+    end
+    vim (date -v "$offset"d +"$HOME/Dropbox/docs/diaries/%Y/%Y-%m-%d-%a.txt")
 end
