@@ -7,5 +7,5 @@ function diary --description "Opens my diary with a given day offset"
     if test $offset -ge 0
         set offset +$offset
     end
-    vim (date -v "$offset"d +"$HOME/Dropbox/docs/diaries/%Y/%Y-%m-%d-%a.txt")
+    vim (date -v "$offset"d +"$HOME/Dropbox/docs/diaries/%Y/%Y-%m-%d-%a.md")
 end
