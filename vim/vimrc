@@ -80,7 +80,7 @@ nnoremap <silent> <leader>v V`]
 nnoremap <silent> <leader>f 1z=
 
 " requires vis plugin
-vnoremap <silent> <leader>y :B w !pbcopy<CR>
+vnoremap <silent> <leader>y :B w !pbcopy<CR>u
 
 "Visual mode keymaps"
 vnoremap j gj
