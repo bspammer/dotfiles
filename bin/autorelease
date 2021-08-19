@@ -1,0 +1,39 @@
+#!/bin/bash
+
+export GITHUB_USERNAME=bspammer
+export GITHUB_ACCESS_TOKEN="$(pass General/Github/Personal-Access-Token)"
+
+function github-curl {
+    2>/dev/null curl -u "$GITHUB_USERNAME:$GITHUB_ACCESS_TOKEN" "${@:1}";
+}
+export -f github-curl
+
+SEARCH_RESULT=$(github-curl "https://api.github.com/search/issues?q=is:open+is:pr+assignee:$GITHUB_USERNAME+archived:false+author:marshmallow-ci" || exit 1)
+PR_URLS=$(echo "$SEARCH_RESULT" | jq -r ".items[].pull_request.url")
+for pr_url in $PR_URLS; do
+    echo ""
+    PR=$(github-curl "$pr_url")
+    AUTHORS=$(echo "$PR" | jq -r "._links.commits.href" | xargs -n 1 -I {} bash -c 'echo "$@"' _ {})
+    echo "$(tput bold)$(echo "$PR" | jq -r '"[\(.base.repo.name)] \(.title)"')$(tput sgr0)"
+    echo "$(tput bold)$(echo "$PR" | jq -r ".html_url")$(tput sgr0)"
+    echo "$AUTHORS"
+    state=$(echo "$PR" | jq -r .base.repo.commits_url | sed "s@{/sha}@/$(echo "$PR" | jq -r .head.ref)/statuses@g" | xargs -n 1 -I {} bash -c 'github-curl "$@"' _ {} | jq -r 'map(select(.context == "continuous-integration/jenkins/pr-merge"))[0].state')
+    if [ "$state" = "success" ]; then
+        echo "✅ CI is passing"
+    else
+        echo "CI is in state $state, skipping..."
+        continue
+    fi
+    release=$(echo "$PR" | jq -r ".base.repo.releases_url" | sed "s/{\/id}//g" | xargs -n 1 -I {} bash -c 'github-curl "$@"' _ {} | jq "map(select(.draft))[0]")
+    echo Latest draft release is "$(echo "$release" | jq -r ".name")"
+    read -rp "Release? (y/N): " confirm
+    if [ "$confirm" != "y" ]; then
+        continue
+    fi
+    echo "Publishing..."
+    github-curl -XPATCH "$(echo "$release" | jq -r ".url")" -d "{\"draft\": false, \"tag_name\": $(echo "$release" | jq .tag_name)}" >/dev/null|| (echo "Something went wrong publishing the release" && exit 1)
+    echo "Approving..."
+    github-curl -XPOST "$(echo "$PR" | jq -r '"\(.url)/reviews"')" -d '{"event":"APPROVE"}' >/dev/null || (echo "Something went wrong approving the release" && exit 1)
+    echo "Merging..."
+    github-curl -XPUT -H "Accept: application/vnd.github.v3+json" "$(echo "$PR" | jq -r '"\(.url)/merge"')" -d "{\"commit_title\":\"$(echo "$PR" | jq -r .title)\", \"merge_method\":\"merge\"}" >/dev/null || (echo "Something went wrong merging the release" && exit 1)
+done
